@@ -12,7 +12,26 @@ main() {
 
   double resultado = _a + $b;
 
-  print( c );
-  print( resultado );
+  //print( c );
+  //print( resultado );
+
+  // ===== String
+  String nombre = 'Tony';
+  String nombre2 = "Tony";
+  String nombre3 = "O'Connor";
+  String apellido = 'Stark';
+
+  String nombreCompleto = '$nombre $apellido';
+
+  String multilinea = '''
+  Hola mundo!
+  ¿Cómo estas?
+  $nombreCompleto
+  Esto es un string multilinea
+  ''';
+
+  print( nombre2 == nombre );
+  print( nombre3 );
+  print( multilinea );
 
 }
