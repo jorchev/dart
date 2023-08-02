@@ -41,4 +41,12 @@ main() {
 
   print( isNotActive );
 
+
+    // ===== Booleans
+    // List<String> villanosDeprecado = new List();
+    List<String> villanos = [ 'Lex', 'Red Skull', 'Doom' ]; // Son en base 0
+    //                          0         1          2
+    villanos[0] = 'Superman';
+    print( villanos );
+
 }
