@@ -30,41 +30,62 @@ main() {
   Esto es un string multilinea
   ''';
 
-  print( nombre2 == nombre );
-  print( nombre3 );
-  print( multilinea );
+  //print( nombre2 == nombre );
+  //print( nombre3 );
+  //print( multilinea );
 
   
   // ===== Booleans
   bool isActive = true;
   bool isNotActive = !isActive;
 
-  print( isNotActive );
+  //print( isNotActive );
 
 
-    // ===== Booleans
-    // List<String> villanosDeprecado = new List();
-    List<String> villanos = [ 'Lex', 'Red Skull', 'Doom' ]; // Son en base 0
-    //                          0         1          2
-    //villanos[0] = 'Superman';
-    villanos.add('Duende Verde');
-    villanos.add('Duende Verde');
-    villanos.add('Duende Verde');
-    villanos.add('Duende Verde');
-    villanos.add('Duende Verde');
-    
-    print( villanos );
+  // ===== Booleans
+  // List<String> villanosDeprecado = new List();
+  List<String> villanos = [ 'Lex', 'Red Skull', 'Doom' ]; // Son en base 0
+  //                          0         1          2
+  //villanos[0] = 'Superman';
+  villanos.add('Duende Verde');
+  villanos.add('Duende Verde');
+  villanos.add('Duende Verde');
+  villanos.add('Duende Verde');
+  villanos.add('Duende Verde');
+  
+  //print( villanos );
 
 
-    // ===== Sets
-    Set<String> villanos2 = { 'Lex', 'Red Skull', 'Doom' };
-    
-    villanos2.add('Duende Verde');
-    villanos2.add('Duende Verde');
-    villanos2.add('Duende Verde');
-    villanos2.add('Duende Verde');
-    villanos2.add('Duende Verde');
-    
-    print( villanos2 );
+  // ===== Sets
+  Set<String> villanos2 = { 'Lex', 'Red Skull', 'Doom' };
+  
+  villanos2.add('Duende Verde');
+  villanos2.add('Duende Verde');
+  villanos2.add('Duende Verde');
+  villanos2.add('Duende Verde');
+  villanos2.add('Duende Verde');
+  
+  //print( villanos2 );
+
+
+  // ===== Maps
+  Map<String, dynamic> ironman = {
+    'nombre': 'Tony Stark',
+    'poder': 'Inteligencia y dinero',
+    'nivel': 9000,
+  };
+
+  //print( ironman['poder'] );
+
+
+  Map<String, dynamic> capitan = new Map();
+  capitan.addAll( {
+    'nombre': 'Steve',
+    'poder': 'Soportar droga sin morir',
+    'nivel': 5000
+  } );
+
+  print( capitan );
+
 
 }
