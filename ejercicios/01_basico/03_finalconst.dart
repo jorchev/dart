@@ -4,6 +4,12 @@ main() {
   final double b = 10;
   const double c = 10;
 
+
+  late final double x;
+  x = 10;
+
+  print( x );
+
   // a = 20;
   // b = 20; // No permite cambiar el valor asignado
   // c = 20; // No permite cambiar el valor asignado
@@ -17,8 +23,8 @@ main() {
   personasFinal.add('Maria');
   //personasConst.add('Maria');
 
-  print(personasFinal);
-  print(personasConst);
+  // print(personasFinal);
+  // print(personasConst);
 
 
 }
