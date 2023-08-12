@@ -19,10 +19,11 @@ main() {
   String resp = 'no';
 
   do{
-    cargarUsuario(cont);
+    int salario = Random().nextInt(950) + 1000;
+    cargarUsuario(cont, salario);
     cont++;
 
-    escribir('¿Deseas capturar otro usuario? si/no');
+    escribir('\n¿Deseas capturar otro usuario? si/no');
     resp = leer();
 
   }while(resp == 'si');
@@ -36,7 +37,7 @@ void escribir ( dato ){
 
 String leer () => stdin.readLineSync() ?? '';
 
-void cargarUsuario(int num){
+void cargarUsuario(int num, int salario){
 
  escribir('=========== Usuario $num =============');
 
@@ -60,7 +61,7 @@ void cargarUsuario(int num){
   escribir('Usuario $num sin deducciones');
   escribir( usuario );
 
-  double salario     = (Random().nextDouble() * 950.00 ) + 1000.00;
+  //double salario     = (Random().nextDouble() * 950.00 ) + 1000.00;
   double deducciones = salario * 0.15;
   double salarioNeto = salario - deducciones;
 
