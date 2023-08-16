@@ -2,12 +2,20 @@ import 'dart:async';
 
 void main(List<String> args){
 
-  final streamController = StreamController();
+  // Stream de multiples subscripciones
+  final streamController = new StreamController<String>.broadcast();
 
   streamController.stream.listen(
     (data) => print('Despegando! $data'),
     onError: (err) => print('Error! $err'),
     onDone: () => print('Mision completa!'),
+    cancelOnError: false 
+  );
+
+  streamController.stream.listen(
+    (data) => print('Despegando Stream 2! $data'),
+    onError: (err) => print('Error Stream 2! $err'),
+    onDone: () => print('Mision completa Stream 2!'),
     cancelOnError: false 
   );
 
