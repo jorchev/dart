@@ -8,6 +8,8 @@ void main(List<String> args){
          ..edad = 33;
         //  ..bio = "Nació por hay";
 
-  print( persona );
+  persona.bio = 'Cambie el valor de bio';
+
+  print( persona.bio );
 
 }
