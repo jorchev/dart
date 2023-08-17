@@ -5,8 +5,8 @@ void main(List<String> args){
   final persona = new Persona();
 
   persona..nombre = 'Fernando'
-         ..edad = 33
-         ..bio = "Nació por hay";
+         ..edad = 33;
+        //  ..bio = "Nació por hay";
 
   print( persona );
 
