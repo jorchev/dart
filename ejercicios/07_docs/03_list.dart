@@ -19,7 +19,44 @@ void main(List<String> args) {
   print('ListaMapa: ${ listaMapa[4] }');
 
   Map listaNombres = nombres.asMap();
+  print('NombreMapa: ${ listaNombres }');
   print('NombreMapa: ${ listaNombres[1] }');
 
+  print('indexOf: ${ nombres.indexOf('Peter') }');
+
+  // int mayor3 = lista.indexWhere((numero){
+
+  //   if(numero > 3){
+  //     return true;
+  //   }else{
+  //     return false;
+  //   }
+
+  // });
+
+  int mayor3 = lista.indexWhere( (numero) => ( numero>3 ) ? true : false );
+
+  print('Indexwhere mayor a 3: ${ mayor3 }');
+
+  print('Remove: ${ nombres.remove( 'Tony' ) }');
+  print( nombres );
+
+  lista.shuffle();
+  print('Shuffle: $lista');
+
+
+  lista3.sort();
+  print('Sort: $lista3');
+  print('Reversed: ${ lista3.reversed.toList() }');
+
+  nombres.forEach((nombre) {
+    nombre = nombre.toUpperCase();
+    print(nombre);
+   });
+
+   print('Listado: $nombres');
+
+  final newList = nombres.map((nombre) => nombre.toUpperCase()).toList();
+  print('newList: ${ newList }');
 
 }
