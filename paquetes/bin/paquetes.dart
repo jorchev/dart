@@ -11,7 +11,7 @@ void main(List<String> arguments) {
     // print(res);
 
     final body = jsonDecode(res.body);
-    //print(body);
+    print(body);
     print('page: ${ body['page'] }');
     print('per_page: ${ body['per_page'] }');
     print('id del tercer elemento: ${ body['data'][2]['id'] } ');
