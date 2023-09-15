@@ -34,10 +34,18 @@ void main(List<String> args) {
   // });
 
   // Versión resumida del removeWhere
-  persona.removeWhere( (key, value) => (key != 'nombre') ? true : false );
+  // persona.removeWhere( (key, value) => (key != 'nombre') ? true : false );
   print('removeWhere: $persona');
 
+  persona.forEach((key, value) { 
+    print('key: $key  value: $value');
+  });
 
+  final personaNew = persona.map((key, value) {
 
+    return MapEntry(key, value.toString().toUpperCase());
 
+  });
+
+  print('persona map: $personaNew');
 }
