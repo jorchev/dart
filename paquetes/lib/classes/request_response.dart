@@ -9,21 +9,89 @@ ReqRes reqResFromJson(String str) => ReqRes.fromJson(json.decode(str));
 String reqResToJson(ReqRes data) => json.encode(data.toJson());
 
 class ReqRes {
-    String greeting;
-    List<String> instructions;
+    int page;
+    int perPage;
+    int total;
+    int totalPages;
+    List<Persona> data;
+    Support support;
 
     ReqRes({
-        required this.greeting,
-        required this.instructions,
+        required this.page,
+        required this.perPage,
+        required this.total,
+        required this.totalPages,
+        required this.data,
+        required this.support,
     });
 
     factory ReqRes.fromJson(Map<String, dynamic> json) => ReqRes(
-        greeting: json["greeting"],
-        instructions: List<String>.from(json["instructions"].map((x) => x)),
+        page       : json["page"],
+        perPage    : json["per_page"],
+        total      : json["total"],
+        totalPages : json["total_pages"],
+        data       : List<Persona>.from(json["data"].map((x) => Persona.fromJson(x))),
+        support    : Support.fromJson(json["support"]),
     );
 
     Map<String, dynamic> toJson() => {
-        "greeting": greeting,
-        "instructions": List<dynamic>.from(instructions.map((x) => x)),
+        "page"        : page,
+        "per_page"    : perPage,
+        "total"       : total,
+        "total_pages" : totalPages,
+        "data"        : List<dynamic>.from(data.map((x) => x.toJson())),
+        "support"     : support.toJson(),
+    };
+}
+
+class Persona {
+    int id;
+    String email;
+    String firstName;
+    String lastName;
+    String avatar;
+
+    Persona({
+        required this.id,
+        required this.email,
+        required this.firstName,
+        required this.lastName,
+        required this.avatar,
+    });
+
+    factory Persona.fromJson(Map<String, dynamic> json) => Persona(
+        id        : json["id"],
+        email     : json["email"],
+        firstName : json["first_name"],
+        lastName  : json["last_name"],
+        avatar    : json["avatar"],
+    );
+
+    Map<String, dynamic> toJson() => {
+        "id"         : id,
+        "email"      : email,
+        "first_name" : firstName,
+        "last_name"  : lastName,
+        "avatar"     : avatar,
+    };
+}
+
+class Support {
+    String url;
+    String text;
+
+    Support({
+        required this.url,
+        required this.text,
+    });
+
+    factory Support.fromJson(Map<String, dynamic> json) => Support(
+        url  : json["url"],
+        text : json["text"],
+    );
+
+    Map<String, dynamic> toJson() => {
+        "url"  : url,
+        "text" : text,
     };
 }

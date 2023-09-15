@@ -1,6 +1,6 @@
-import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:paquetes/paquetes.dart' as paquetes;
+import 'package:paquetes/classes/request_response.dart';
 
 void main(List<String> arguments) {
 
@@ -9,13 +9,17 @@ void main(List<String> arguments) {
   http.get(url).then( (res) {
 
     // print(res);
+    // final body = jsonDecode(res.body);
+    // print(body);
+    // print('page: ${ body['page'] }');
+    // print('per_page: ${ body['per_page'] }');
+    // print('id del tercer elemento: ${ body['data'][2]['id'] } ');
 
-    final body = jsonDecode(res.body);
-    print(body);
-    print('page: ${ body['page'] }');
-    print('per_page: ${ body['per_page'] }');
-    print('id del tercer elemento: ${ body['data'][2]['id'] } ');
+    final resReq = reqResFromJson( res.body );
 
+    print('page: ${ resReq.page }');
+    print('per_page: ${ resReq.perPage }');
+    print('id del tercer elemento: ${ resReq.data[2].id } ');
 
   } );
 
