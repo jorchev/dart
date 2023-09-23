@@ -4,4 +4,7 @@ void main(List<String> arguments) {
 
   paquetes.getReqResServices();
 
+  // Tarea
+  paquetes.getReqResPaisServices();
+
 }
